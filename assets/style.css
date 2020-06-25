@@ -1,0 +1,86 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;500;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.logo {
+  height: 3.1em;
+  cursor: pointer;
+}
+li,
+a,
+button {
+  font-family: "Lato", sans-serif;
+  font-weight: 500;
+  font-size: 1.15em;
+  color: #edf0f1;
+  text-decoration: none;
+  cursor: pointer;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.61em 10%;
+  background-color: #44318d;
+}
+.nav_link {
+  list-style: none;
+}
+.nav_link li {
+  display: inline-block;
+  padding: 3px 1.5em;
+}
+.nav_link li a {
+  transition: all 0.4s ease 0s;
+  text-decoration: none;
+}
+.nav_link li:first-child a {
+  color: #ff652f;
+}
+.nav_link li a:hover {
+  color: #ff652f;
+}
+.hamburger {
+  display: none;
+}
+
+@media screen and (max-width: 878px) {
+  .line {
+    width: 30px;
+    height: 3px;
+    background: white;
+    margin: 5px;
+  }
+  .nav {
+    position: relative;
+  }
+  .hamburger {
+    position: absolute;
+    display: block;
+    cursor: pointer;
+    top: 25%;
+    right: 5%;
+    transform: translate(-25%, -5%);
+    z-index: 2;
+  }
+  .nav_link {
+    position: fixed;
+    display: block;
+    right: 0;
+    padding-top: 10%;
+    background-color: #44318d;
+    height: 100vh;
+    width: 35%;
+    flex-direction: column;
+    clip-path: circle(100px at 10% -80%);
+    -webkit-clip-path: circle(100px at 10% -80%);
+    transition: all 1s ease-out 0s;
+  }
+  .nav_link.open {
+    clip-path: circle(1000px at 10% -80%);
+    -webkit-clip-path: circle(1300px at 10% -80%);
+  }
+}
